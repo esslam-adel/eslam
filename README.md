@@ -84,3 +84,45 @@ The Phase 1 design targets a layered or hexagonal modular monolith. Planned modu
 ├── main.py
 ├── README.md
 └── requirements.txt
+```
+
+## Quick Start (Docker)
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+
+### Run Locally
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/MOsaber22/PyLink.git](https://github.com/MOsaber22/PyLink.git)
+   cd PyLink
+   ```
+
+2. **Create the environment file:**
+   - **Windows (CMD / PowerShell):**
+```bash
+copy .env.example .env
+```
+   - **Linux / macOS:**
+```bash
+cp .env.example .env
+```
+
+3. **Build and start the application and database:**
+   ```bash
+   docker compose up --build -d
+   ```
+
+### Verify the Setup
+- **API Health Check:** `http://localhost:8000/health` → `{"status": "ok"}`
+- **Database Health Check:** `http://localhost:8000/health/db` → `{"status": "ok", "database": "connected"}`
+- **Interactive API Docs:** `http://localhost:8000/docs`
+
+### Useful Commands
+- **Check running containers:** `docker compose ps`
+- **View container logs:** `docker compose logs -f`
+- **Stop containers:** `docker compose down`
+
+## Using AI responsibly
+
+AI output is a draft. Verify it against the project brief, correct mistakes, and run and test generated code before trusting it. Record prompts and verdicts in the prompt log. Do not paste passwords, real personal data, or another team's code into an AI tool.
